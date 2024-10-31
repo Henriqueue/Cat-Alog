@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat-Alog</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- LOGOTIPO E MENU -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="/cat-alog.png.png" alt="cat-alog Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><img class="icon" src="/miniicons/home.png" alt=""><a href="#recently-played">Home</a></li>
+                <li><img class="icon" src="/miniicons/home.png" alt=""><a href="#recently-played">Recém jogados</a></li>
+                <li><img class="icon"  src= "/miniicons/clock.png" alt=""><a href="#top3-games">Top Jogos</a></li>
+                <li><img class="icon"  src= "/miniicons/console.png" alt=""><a href="#game-library">Biblioteca</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    <div class="container">
+        <!-- SEÇÃO RECÉM JOGADOS COM CARROSSEL -->
+        <section class="recently-played" id="recently-played">
+            <h2>Recém Jogados</h2>
+            <div class="carousel-container">
+                <div class="carousel carousel-left" id="carousel-left">
+                    <div class="game">
+                        <img src="/Imagens/Metal Gear V.png" alt="">
+                    </div>
+                    <div class="game">
+                        <img src="/Imagens/Gato Roboto.png" alt="">
+                    </div>
+                    <div class="game">
+                        <img src="/Imagens/Persona 3 Reload.png" alt="">
+                    </div>
+                </div>
+
+                <div class="carousel carousel-right" id="carousel-right">
+                    <div class="game-large">
+                        <img src="/Imagens/metal.gear.jpeg" alt="">
+                    </div>
+                    <div class="game-large">
+                        <img src="/Imagens/gato.roboto.jpeg" alt="">
+                    </div>
+                    <div class="game-large">
+                        <img src="/Imagens/persona.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOP 3 JOGOS -->
+        <section class="top3-games" id="top3-games">
+            <h2>Top 3 Jogos</h2>
+            <div class="game-list">
+                <div class="game" data-images='["/frames/macaco1.jpeg", "/frames/macaco2.jpeg", "/frames/macaco3.jpeg"]' data-classification="">
+                    <img src="/Imagens/Macaco.avif" alt="Game 1" class="game-image">
+                    <div class="classification"></div>
+                </div>
+                <div class="game" data-images='["/frames/space1.jpeg", "/frames/space2.jpeg", "/frames/space3.jpeg"]' data-classification="">
+                    <img src="/Imagens/Space marine.avif" alt="Game 2" class="game-image">
+                    <div class="classification"></div>
+                </div>
+                <div class="game" data-images='["/frames/god1.jpg", "/frames/god2.webp", "/frames/god3.webp"]' data-classification="">
+                    <a href="/jogo.html">
+                    <img src="/Imagens/bom de guerra.webp" alt="Game 3" class="game-image">
+                    <div class="classification"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BIBLIOTECA DE JOGOS -->
+        <section class="game-library" id="game-library">
+            <h2>Biblioteca de Jogos </h2>
+            <div class="game-grid">
+                <div class="game">
+                    <img src="/biblioteca/funger.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="/Imagens/Fear & Hunger Termina.jpg" alt="">
+                </div>
+                <div class="game">
+                    <img src="/Imagens/Terraria.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="/Imagens/Valheim.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="/Imagens/Gato Roboto.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="/Imagens/Persona 3 Reload.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="/Imagens/Metal Gear V.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="biblioteca/fallout3.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="/biblioteca/falloutnv.webp" alt="">
+                </div>
+                <div class="game">
+                    <img src="/biblioteca/fallout4.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="/biblioteca/dmc5.png" alt="">
+                </div>
+                <div class="game">
+                    <img src="biblioteca/dmc4.png" alt="">
+                </div>
+            </div>
+            <a href="all-games.html" class="view-all">Ver todos os jogos</a>
+        </section>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2024 Cat-Alog. Todos os direitos reservados à Henrique Fernandes e Albuquerque.</p>
+    </footer>
+
+    <!-- Script para o Carrossel -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const carouselLeft = document.getElementById('carousel-left');
+        const carouselRight = document.getElementById('carousel-right');
+        
+        const slideCountLeft = carouselLeft.children.length;
+        const slideCountRight = carouselRight.children.length;
+        
+        let currentIndex = 0;
+
+        function moveCarousel() {
+            currentIndex = (currentIndex + 1) % slideCountLeft; // Muda o índice
+
+            // Calcula o deslocamento para ambos os carrosséis
+            const offsetLeft = currentIndex * carouselLeft.clientWidth;
+            const offsetRight = currentIndex * carouselRight.clientWidth;
+
+            // Mover os carrosséis
+            carouselLeft.scrollTo({ left: offsetLeft, behavior: 'smooth' });
+            carouselRight.scrollTo({ left: offsetRight, behavior: 'smooth' });
+        }
+
+        // Intervalo para mudar as imagens a cada 3 segundos
+        setInterval(moveCarousel, 3000);
+    });
+    </script>
+
+    <!-- Script para troca de imagens -->
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    const games = document.querySelectorAll('.top3-games .game');
+
+    games.forEach(game => {
+        const images = JSON.parse(game.getAttribute('data-images'));
+        const classification = game.getAttribute('data-classification');
+        const imgElement = game.querySelector('.game-image');
+        const classificationElement = game.querySelector('.classification');
+        
+        classificationElement.textContent = classification;
+
+        let index = 0;
+        let interval;
+
+        game.addEventListener('mouseenter', () => {
+            imgElement.style.transition = 'opacity 0.5s';
+            interval = setInterval(() => {
+                imgElement.src = images[index];
+                index = (index + 1) % images.length;
+            }, 1500);
+        });
+
+        game.addEventListener('mouseleave', () => {
+            clearInterval(interval);
+            imgElement.src = imgElement.getAttribute('src');
+        });
+    });
+});
+    </script>
+</body>
+</html>

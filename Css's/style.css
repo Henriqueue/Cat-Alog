@@ -1,0 +1,215 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #f0f0f0;
+    background-image: url(gato.png);
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: rgba(0, 0, 0, 0.8);    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    height: 100px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+nav ul li {
+    display:contents;
+    align-items: left; /* Alinha o ícone e o texto na mesma linha */
+    margin:20px 20px 20px;
+}
+
+nav ul li .icon {
+    width: 16px; /* Ajuste o tamanho do ícone */
+    height: 16px; /* Ajuste o tamanho do ícone */
+    margin-right: 15px; /* Espaçamento entre o ícone e o texto */
+    margin-left: 10px;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block; /* Garante que o texto fique ao lado do ícone */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Seção "Recém Jogados" */
+.recently-played {
+    margin-bottom: 40px;
+}
+
+.recently-played h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* CENTRALIZANDO O CONTEÚDO */
+.container {
+    max-width: 1000px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 20px;
+}
+
+/* Ajuste para o contêiner do carrossel */
+.carousel-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden; /* Garante que apenas as imagens visíveis sejam mostradas */
+}
+
+/* Carrossel da esquerda (imagens menores) */
+.carousel-left {
+    display: flex;
+    width: 40%; /* O carrossel da esquerda ocupa 40% do espaço */
+    overflow: hidden;
+}
+
+.carousel-left .game {
+    flex-shrink: 0; /* Impede que as imagens encolham */
+    width: 100%; /* Ajusta a largura para o contêiner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Esconde o conteúdo extra */
+}
+
+.carousel-left img {
+    width: 100%; /* Preenche o contêiner horizontalmente */
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: contain; /* Garante que a imagem seja mostrada corretamente sem cortes */
+    border-radius: 10px;
+}
+
+/* Carrossel da direita (imagens maiores) */
+.carousel-right {
+    display: flex;
+    width: 100%; 
+    overflow: hidden;
+}
+
+.carousel-right .game-large {
+    flex-shrink: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-right img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* Ajuste de altura e largura para o carrossel */
+.carousel img {
+    max-height: 400px; /* Limita a altura máxima das imagens */
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease; /* Adiciona uma transição suave ao deslizamento */
+}
+
+.carousel img {
+    flex-shrink: 0; /* Impede que as imagens encolham no contêiner */
+}
+
+
+/* Seção "Top 3 Jogos" */
+.top3-games {
+    margin-bottom: 40px;
+    
+}
+
+.top3-games h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.game-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.game img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.game img:hover {
+    transform: scale(1.05);
+}
+
+.classification {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Biblioteca de Jogos */
+.game-library {
+    margin-bottom: 40px;
+}
+
+.game-library h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.game-grid .game img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.view-all {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #00ccff;
+    text-decoration: none;
+}
+
+/* Rodapé */
+footer {
+    background-color: #262626;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
